@@ -6,10 +6,10 @@ gss_cat
 
 # Produce table of hours of tv per marital status
 
-tv_hours_tabulation_long<-gss_cat %>% 
+tv_hours_tabulation_verylong<-gss_cat %>% 
   dplyr::filter(age>=30) %>% # Message of a potential tidyverse_conflicts 
   group_by(marital) %>% 
   summarise(mean_tv_hours=mean(tvhours, na.rm=T))
 
 # Exports table to csv file
-write_csv(tv_hours_tabulation_long,here("tv_hours_table.csv"))
+write_csv(tv_hours_tabulation_verylong,here("tv_hours_table.csv"))
