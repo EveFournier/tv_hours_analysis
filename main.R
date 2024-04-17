@@ -7,7 +7,7 @@ gss_cat
 # Produce table of hours of tv per marital status
 
 tv_hours_tabulation<-gss_cat %>% 
-  dplyr::filter(age<30) %>% # Message of a potential tidyverse_conflicts 
+  dplyr::filter(age>=30) %>% # Message of a potential tidyverse_conflicts 
   group_by(marital) %>% 
   summarise(mean_tv_hours=mean(tvhours, na.rm=T))
 
